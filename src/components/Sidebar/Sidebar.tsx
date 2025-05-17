@@ -3,7 +3,6 @@ import { useIntl } from 'react-intl';
 import { Home, User, Code2, BookOpen, Mail, Menu, X } from 'lucide-react';
 import styles from './Sidebar.module.css';
 import { LanguageContext } from '../../context/LanguageContext';
-import { personalInfo } from '../../data';
 import { useScrollToSection } from '../../hooks/useScrollToSection';
 
 const Sidebar: React.FC = () => {
@@ -36,17 +35,6 @@ const Sidebar: React.FC = () => {
       </button>
 
       <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
-        <div className={styles.profileContainer}>
-          <div className={styles.imageWrapper}>
-            <img
-              src={personalInfo.profileImage}
-              alt={personalInfo.name}
-              className={styles.profileImage}
-            />
-          </div>
-          <h1 className={styles.name}>{personalInfo.name}</h1>
-          <p className={styles.title}>{personalInfo.title}</p>
-        </div>
 
         <nav className={styles.nav}>
           <ul className={styles.navList}>

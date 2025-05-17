@@ -80,7 +80,6 @@
 }
 
 .imageContainer {
-  display: none;
   flex: 0 0 350px;
   position: relative;
   opacity: 0;
@@ -134,7 +133,6 @@
   }
 
   .imageContainer {
-    display: block;
     flex: 0 0 300px;
   }
 
