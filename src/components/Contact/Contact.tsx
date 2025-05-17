@@ -13,18 +13,17 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className={styles.contact} ref={sectionRef}>
       <div className={styles.container}>
-        <h2 className={styles.heading}>Get In Touch</h2>
+        <h2 className={styles.heading}> Contactez moi</h2>
         <p className={styles.subheading}>
-          Feel free to reach out if you're looking for a developer, have a question, or just want to connect.
+          N'hésitez pas à me contacter si vous recherchez un développeur, avez une question, ou souhaitez simplement échanger.
         </p>
         
         <div className={styles.content}>
           <div className={styles.info}>
-            <h3 className={styles.infoHeading}>Let's connect!</h3>
+            <h3 className={styles.infoHeading}>Entrons en contact !</h3>
             <p className={styles.text}>
-              I'm currently available for freelance work and full-time opportunities. 
-              If you have a project that you want to get started, think you need my help 
-              with something, or just fancy saying hello, then get in touch.
+              Si vous avez un projet que vous souhaitez démarrer, pensez que vous avez besoin de mon aide 
+              pour quelque chose, ou souhaitez simplement dire bonjour, alors contactez-moi.
             </p>
             
             <div className={styles.location}>

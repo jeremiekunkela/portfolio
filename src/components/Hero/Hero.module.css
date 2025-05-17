@@ -105,8 +105,8 @@
 
 .imageBackground {
   position: absolute;
-  width: 380px;
-  height: 380px;
+  width: 350px;
+  height: 350px;
   background-color: var(--color-accent);
   border-radius: 50%;
   z-index: -1;
@@ -169,7 +169,7 @@
   }
 
   .imageBackground {
-    width: 280px;
+    width: 250px;
     height: 280px;
     top: -10px;
     left: calc(50% - 140px);

@@ -9,13 +9,11 @@ const Timeline: React.FC = () => {
     threshold: 0.1,
   });
 
-  const educationItems = timelineData.filter(item => item.type === 'education');
-  const experienceItems = timelineData.filter(item => item.type === 'experience');
 
   return (
     <section id="timeline" className={styles.timeline} ref={sectionRef}>
       <div className={styles.container}>
-        <h2 className={styles.heading}>My Journey</h2>
+        <h2 className={styles.heading}>Mon Parcours</h2>
         
         <div className={styles.timelineContainer}>
           <div className={styles.centerLine}></div>

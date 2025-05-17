@@ -9,7 +9,7 @@ interface LanguageContextType {
 }
 
 export const LanguageContext = createContext<LanguageContextType>({
-  language: 'en',
+  language: 'fr',
   setLanguage: () => {},
 });
 
@@ -20,7 +20,10 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const [language, setLanguage] = useState<Language>(() => {
     const savedLang = localStorage.getItem('language') as Language;
-    return savedLang || navigator.language.startsWith('fr') ? 'fr' : 'en';
+    if (savedLang) {
+      return savedLang;
+    }
+    return navigator.language.startsWith('fr') ? 'fr' : 'en';
   });
 
   const handleLanguageChange = useCallback((lang: Language) => {
@@ -30,7 +33,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: handleLanguageChange }}>
-      <IntlProvider messages={messages[language]} locale={language} defaultLocale="en">
+      <IntlProvider messages={messages[language]} locale={language} defaultLocale="fr">
         {children}
       </IntlProvider>
     </LanguageContext.Provider>

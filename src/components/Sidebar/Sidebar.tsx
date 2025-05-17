@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useIntl } from 'react-intl';
-import { Home, User, Code2, BookOpen, Mail, Menu, X } from 'lucide-react';
+import { Home, User, Code2, BookOpen, Mail, Menu, X, AppWindow } from 'lucide-react';
 import styles from './Sidebar.module.css';
 import { LanguageContext } from '../../context/LanguageContext';
 import { useScrollToSection } from '../../hooks/useScrollToSection';
@@ -15,6 +15,7 @@ const Sidebar: React.FC = () => {
     { id: 'home', icon: Home, label: intl.formatMessage({ id: 'nav.home' }) },
     { id: 'about', icon: User, label: intl.formatMessage({ id: 'nav.about' }) },
     { id: 'skills', icon: Code2, label: intl.formatMessage({ id: 'nav.skills' }) },
+    { id: 'projects', icon: AppWindow, label: intl.formatMessage({ id: 'nav.projects' }) },
     { id: 'blog', icon: BookOpen, label: intl.formatMessage({ id: 'nav.blog' }) },
     { id: 'contact', icon: Mail, label: intl.formatMessage({ id: 'nav.contact' }) },
   ];

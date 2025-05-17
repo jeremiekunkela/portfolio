@@ -34,9 +34,11 @@ const SkillItem: React.FC<SkillItemProps> = ({ skill, isVisible, delay }) => {
         <IconComponent size={30} />
       </div>
       <h3 className={styles.name}>{skill.name}</h3>
-      <span className={`${styles.levelChip} ${getLevelClass(skill.level)}`}>
-        {skill.level}
-      </span>
+      {skill.level && (
+        <span className={`${styles.levelChip} ${getLevelClass(skill.level)}`}>
+          {skill.level}
+        </span>
+      )}
     </div>
   );
 };

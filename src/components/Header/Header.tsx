@@ -18,9 +18,11 @@ const Header: React.FC = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', sectionId: 'home' },
-    { name: 'Timeline', sectionId: 'timeline' },
-    { name: 'Skills', sectionId: 'skills' },
+    { name: 'Accueil', sectionId: 'home' },
+    { name: 'Chronologie', sectionId: 'timeline' },
+    { name: 'Compétences', sectionId: 'skills' },
+    { name: 'Projets', sectionId: 'projects' },
+    { name: 'Blog', sectionId: 'blog' },
     { name: 'Contact', sectionId: 'contact' }
   ];
 
@@ -33,7 +35,7 @@ const Header: React.FC = () => {
     <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ''}`}>
       <div className={styles.container}>
         <a href="#" className={styles.logo} onClick={() => handleNavClick('home')}>
-          AM
+          JK
         </a>
 
         <nav className={styles.nav}>

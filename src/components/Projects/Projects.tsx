@@ -14,9 +14,9 @@ const Projects: React.FC = () => {
   });
 
   const categories: { id: ProjectCategory; label: string }[] = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'Personal', label: 'Personal Projects' },
-    { id: 'Student', label: 'Student Projects' }
+    { id: 'all', label: 'Tous les projets' },
+    { id: 'Personal', label: 'Projets personnels' },
+    { id: 'Student', label: 'Projets étudiants' }
   ];
 
   const filteredProjects = activeCategory === 'all'
@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className={styles.projects} ref={sectionRef}>
       <div className={styles.container}>
-        <h2 className={styles.heading}>My Projects</h2>
+        <h2 className={styles.heading}>Mes Projets</h2>
         
         <div className={styles.categories}>
           {categories.map(category => (

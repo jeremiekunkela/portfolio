@@ -8,17 +8,17 @@ import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 type SkillCategory = Skill['category'] | 'all';
 
 const Skills: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<SkillCategory>('all');
+  const [activeCategory, setActiveCategory] = useState<SkillCategory>('technical');
   const [sectionRef, isVisible] = useIntersectionObserver<HTMLElement>({
     threshold: 0.1,
   });
 
   const categories: { id: SkillCategory; label: string }[] = [
-    { id: 'all', label: 'All Skills' },
-    { id: 'technical', label: 'Technical' },
-    { id: 'soft', label: 'Soft Skills' },
-    { id: 'tools', label: 'Tools' },
-    { id: 'language', label: 'Languages' }
+    { id: 'all', label: 'Toutes les compétences' },
+    { id: 'technical', label: 'Techniques' },
+    { id: 'soft', label: 'Compétences douces' },
+    { id: 'tools', label: 'Outils' },
+    { id: 'language', label: 'Langues' }
   ];
 
   const filteredSkills = activeCategory === 'all' 
@@ -28,9 +28,9 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className={styles.skills} ref={sectionRef}>
       <div className={styles.container}>
-        <h2 className={styles.heading}>My Skills</h2>
+        <h2 className={styles.heading}>Mes Compétences</h2>
         <p className={styles.subheading}>
-          Here are some of the skills I've acquired throughout my journey as a developer.
+          Voici un aperçu de mes compétences. Je suis toujours en train d'apprendre et d'évoluer,
         </p>
         
         <div className={styles.categories}>

@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
     <section id="home" className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <p className={styles.greeting}>Hello, I'm</p>
+          <p className={styles.greeting}>Bonjour 👋, je suis</p>
           <h1 className={styles.name}>{personalInfo.name}</h1>
           <h2 className={styles.title}>{personalInfo.title}</h2>
           <p className={styles.bio}>{personalInfo.bio}</p>
@@ -25,7 +25,6 @@ const Hero: React.FC = () => {
             Get in touch
           </a>
         </div>
-        
         <div className={styles.imageContainer}>
           <div className={styles.imageBackground}></div>
           <div className={styles.imageWrapper}>
