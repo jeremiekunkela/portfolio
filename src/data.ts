@@ -10,11 +10,7 @@ export const timelineData: TimelineItem[] = [
     period: '2023 - Present',
     description: 'Spécialisation en Python, Architecture logicielle, Méthodologie Agile, JavaScript, Vision par ordinateur, Flutter, Framework Ionic',
     type: 'education',
-    achievements: [
-      'Major de promotion avec une moyenne de 17/20',
-      'Projet de recherche en IA récompensé par le prix de l\'innovation',
-      'Représentant des étudiants au conseil d\'administration'
-    ]
+    location: 'Ivry-sur-Seine, Île-de-France',
   },
   {
     id: 2,
@@ -24,11 +20,6 @@ export const timelineData: TimelineItem[] = [
     description: 'Développement d\'applications web avec React.js et Node.js en alternance',
     type: 'experience',
     location: 'Montreuil, Île-de-France',
-    achievements: [
-      'Réduction de 40% du temps de chargement des pages par l\'optimisation du code',
-      'Mise en place d\'une architecture micro-frontends pour améliorer la maintenabilité',
-      'Formation de 5 développeurs juniors aux bonnes pratiques React'
-    ]
   },
   {
     id: 3,
@@ -54,7 +45,8 @@ export const timelineData: TimelineItem[] = [
     organization: 'INTECH',
     period: '2020 - 2023',
     description: 'Formation en développement logiciel avec mention très bien. Spécialisation en Java, Spring Boot, Vue.js, et pratiques DevOps',
-    type: 'education'
+    type: 'education',
+    location: 'Ivry-sur-Seine, Île-de-France',
   },
   {
     id: 6,
@@ -62,7 +54,8 @@ export const timelineData: TimelineItem[] = [
     organization: 'Lycée Camille See',
     period: '2017 - 2020',
     description: 'Spécialité Mathématiques',
-    type: 'education'
+    type: 'education',
+    location: 'Paris, Île-de-France',
   }
 ];
 export const skillsData: Skill[] = [

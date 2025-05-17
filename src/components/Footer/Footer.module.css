@@ -42,14 +42,6 @@
   color: var(--color-accent);
 }
 
-.madeWith {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .heart {
   color: var(--color-accent);
 }

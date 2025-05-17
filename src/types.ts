@@ -5,6 +5,7 @@ export interface TimelineItem {
   period: string;
   description: string;
   type: 'education' | 'experience';
+  location?: string;
 }
 
 export interface Skill {

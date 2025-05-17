@@ -33,19 +33,19 @@ const ContactForm: React.FC<ContactFormProps> = ({ isVisible }) => {
     const newErrors: FormErrors = {};
     
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = 'Le nom est requis';
     }
     
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = 'L\'email est requis';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
+      newErrors.email = 'L\'email est invalide';
     }
     
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = 'Le message est requis';
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters';
+      newErrors.message = 'Le message doit contenir au moins 10 caractères';
     }
     
     setErrors(newErrors);
@@ -56,7 +56,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ isVisible }) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
-    // Clear error when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }
@@ -68,13 +67,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ isVisible }) => {
     if (validateForm()) {
       setIsSubmitting(true);
       
-      // Simulate form submission
       setTimeout(() => {
         setIsSubmitting(false);
         setSubmitSuccess(true);
         setFormData({ name: '', email: '', message: '' });
         
-        // Reset success message after 5 seconds
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 5000);
@@ -86,13 +83,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ isVisible }) => {
     <div className={`${styles.formContainer} ${isVisible ? styles.visible : ''}`}>
       {submitSuccess && (
         <div className={styles.successMessage}>
-          Thank you for your message! I'll get back to you soon.
+          Merci pour votre message ! Je vous répondrai bientôt.
         </div>
       )}
       
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label htmlFor="name" className={styles.label}>Name</label>
+          <label htmlFor="name" className={styles.label}>Nom</label>
           <input
             type="text"
             id="name"
@@ -100,7 +97,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isVisible }) => {
             value={formData.name}
             onChange={handleChange}
             className={styles.input}
-            placeholder="Your name"
+            placeholder="Votre nom"
           />
           {errors.name && <p className={styles.error}>{errors.name}</p>}
         </div>
@@ -114,7 +111,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isVisible }) => {
             value={formData.email}
             onChange={handleChange}
             className={styles.input}
-            placeholder="Your email address"
+            placeholder="Votre adresse email"
           />
           {errors.email && <p className={styles.error}>{errors.email}</p>}
         </div>
@@ -127,7 +124,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isVisible }) => {
             value={formData.message}
             onChange={handleChange}
             className={styles.textarea}
-            placeholder="Your message"
+            placeholder="Votre message"
           ></textarea>
           {errors.message && <p className={styles.error}>{errors.message}</p>}
         </div>
@@ -137,9 +134,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ isVisible }) => {
           className={styles.button}
           disabled={isSubmitting}
         >
-          {isSubmitting ? 'Sending...' : (
+          {isSubmitting ? 'Envoi en cours...' : (
             <>
-              Send Message
+              Envoyer le message
               <Send size={16} style={{ marginLeft: '8px' }} />
             </>
           )}

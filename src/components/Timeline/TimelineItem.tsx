@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar } from 'lucide-react';
+import { Calendar, MapPin } from 'lucide-react';
 import styles from './TimelineItem.module.css';
 import { TimelineItem as TimelineItemType } from '../../types';
 
@@ -29,6 +29,12 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           <Calendar size={16} />
           {item.period}
         </p>
+        {item.location && (
+          <p className={styles.location}>
+            <MapPin size={16} />
+            {item.location}
+          </p>
+        )}
         <p className={styles.description}>{item.description}</p>
       </div>
     </div>

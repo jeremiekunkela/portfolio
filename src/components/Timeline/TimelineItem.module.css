@@ -87,6 +87,15 @@
   gap: 0.5rem;
 }
 
+.location {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .description {
   font-size: 0.9375rem;
   line-height: 1.6;
