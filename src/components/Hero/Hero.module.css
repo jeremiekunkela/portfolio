@@ -1,0 +1,177 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 6rem 2rem 4rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.content {
+  flex: 1;
+}
+
+.greeting {
+  color: var(--color-accent);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+}
+
+.name {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  line-height: 1.1;
+  color: var(--text-primary);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s 0.2s forwards;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s 0.4s forwards;
+}
+
+.bio {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 80%;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s 0.6s forwards;
+}
+
+.ctaButton {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s 0.8s forwards;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
+  flex: 0 0 350px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s 1s forwards;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid var(--color-secondary);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageBackground {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  z-index: -1;
+  top: -10px;
+  left: 40px;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .bio {
+    margin: 0 auto 2rem;
+  }
+
+  .imageContainer {
+    flex: 0 0 300px;
+  }
+
+  .imageWrapper {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .imageBackground {
+    width: 330px;
+    height: 330px;
+    top: -10px;
+    left: calc(50% - 165px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 5rem 1.5rem 3rem;
+  }
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .imageWrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  .imageBackground {
+    width: 280px;
+    height: 280px;
+    top: -10px;
+    left: calc(50% - 140px);
+  }
+}

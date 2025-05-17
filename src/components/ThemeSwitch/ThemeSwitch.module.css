@@ -1,0 +1,24 @@
+.switch {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.switch:hover {
+  background-color: var(--bg-secondary);
+}
+
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.switch:hover .icon {
+  transform: rotate(45deg);
+}
