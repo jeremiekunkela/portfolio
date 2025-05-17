@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
           </a>
         </div>
         
-        {/* <div className={styles.imageContainer}>
+        <div className={styles.imageContainer}>
           <div className={styles.imageBackground}></div>
           <div className={styles.imageWrapper}>
             <img 
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
               className={styles.profileImage}
             />
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );
