@@ -66,6 +66,83 @@
   color: var(--text-secondary);
 }
 
+/* Style pour les titres h1, h2, h3, etc. */
+.content h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.content h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+/* Style pour les paragraphes */
+.content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Style pour les listes */
+.content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Style pour les liens */
+.content a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* Section des compétences */
+.skillsSection {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.skillsTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+/* Conteneur des compétences */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Style des chips */
+.skillChip {
+  background-color: var(--color-secondary-transparent);
+  color: var(--color-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.875rem;
+}
+
 @media (max-width: 768px) {
   .article {
     padding: 4rem 1.5rem;

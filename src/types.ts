@@ -34,6 +34,7 @@ export interface BlogPost {
   category: 'Réalisation' | 'Compétence technique' | 'Compétence transverse';
   readTime: number;
   image?: string;
+  skills?: string[];
 }
 
 export interface Project {

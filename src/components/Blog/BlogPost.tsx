@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { ArrowLeft, Clock } from 'lucide-react';
+import ReactMarkdown from 'react-markdown'; // Import de react-markdown
 import styles from './BlogPost.module.css';
 import { blogPosts } from '../../data';
 
@@ -53,8 +54,23 @@ const BlogPost: React.FC = () => {
         </header>
 
         <div className={styles.content}>
-          {post.content}
+          {/* Utilisation de ReactMarkdown pour rendre le contenu Markdown */}
+          <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
+
+        {/* Affichage des compétences à la fin */}
+        {post.skills && post.skills.length > 0 && (
+          <section className={styles.skillsSection}>
+            <h2 className={styles.skillsTitle}>Compétences utilisées</h2>
+            <div className={styles.skills}>
+              {post.skills.map((skill, index) => (
+                <span key={index} className={styles.skillChip}>
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </article>
   );

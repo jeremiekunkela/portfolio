@@ -186,7 +186,51 @@ export const blogPosts: BlogPost[] = [
   //   category: 'Réalisation',
   //   readTime: 10,
   //   image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  // }
+  // },
+  {
+    id: 7, // Assurez-vous que l'ID est unique
+    title: 'Optimisation du suivi et de la restitution du matériel des employés en départ',
+    slug: 'optimisation-restitution-materiel',
+    excerpt: 'Un projet pour garantir la restitution des équipements des employés en départ et améliorer le suivi pour les informaticiens locaux et les RH.',
+    content: `
+Dans mon entreprise, la restitution du matériel des employés en départ n’était pas correctement suivie. Cela engendrait des pertes et compliquait le travail des informaticiens locaux (IL) et des ressources humaines (RH). Après une réunion pour définir les besoins, l’idée initiale était de mettre en place un script automatisé permettant d’identifier les employés sur le départ à J-X jours, de leur envoyer une première notification pour les inviter à prendre rendez-vous avec un informaticien via un outil interne, puis de programmer plusieurs relances si aucune action n’était prise.
+
+Si, après le départ de l’employé, aucun matériel n’était restitué, une nouvelle étape de suivi était déclenchée, informant les RH pour qu’ils puissent engager des actions si nécessaire.
+
+### Un script pour automatiser le suivi
+
+J’ai choisi de développer ce script en Node.js et TypeScript. Le choix de TypeScript était motivé par la nécessité d’avoir un typage strict pour garantir la fiabilité des données, essentielles au bon fonctionnement du processus. Node.js s’est imposé naturellement pour sa performance et sa capacité à traiter efficacement les échanges avec les outils internes de l’entreprise.
+
+Au fil du développement, j’ai identifié un besoin supplémentaire : l’absence de visibilité pour les informaticiens et les RH sur l’état des restitutions. J’ai donc proposé et développé une interface web en React et Node.js pour suivre l’ensemble du processus en temps réel.
+
+### Une interface pour piloter la restitution
+
+L’interface que j’ai conçue permet de voir qui a pris rendez-vous, qui a restitué ou non son matériel et qui doit partir dans les prochains jours. Elle offre également la possibilité d’ajouter des commentaires pour suivre les restitutions et de déclarer manuellement des rendez-vous, bien que la plupart soient récupérés automatiquement depuis l’outil interne.
+
+Grâce à cette interface, les IL et les RH ont une vision claire et centralisée du processus. J’ai également ajouté une fonctionnalité permettant d’interrompre le suivi pour des cas spécifiques, par exemple lorsqu’un employé conserve du matériel pour une mission future.
+
+### Un impact concret et des résultats mesurables
+
+Depuis la mise en place de ce processus, 90 restitutions ont été gérées avec succès, et seul un employé n’a pas restitué son matériel depuis octobre 2024. Ce projet a considérablement amélioré le travail des IL en leur fournissant des outils efficaces pour suivre les restitutions et en réduisant le nombre d’employés partant sans rendre leur équipement.
+
+### Des évolutions pour l’avenir
+
+À court terme, des améliorations sont déjà prévues. L’objectif est d’étendre l’outil pour inclure d’autres types de matériel, comme les chaises ergonomiques, afin de couvrir des besoins plus larges. Une ouverture aux RH est aussi envisagée, avec un module leur permettant de saisir les étapes du processus et d’indiquer si la restitution a bien eu lieu.
+
+Le script évoluera également pour prendre en compte davantage de types de contrats, certains n’étant pas encore gérés pour des raisons administratives. Enfin, une page de statistiques sera ajoutée pour suivre l’évolution du taux de restitution et identifier d’éventuels axes d’amélioration.
+
+### Un projet dont je suis fier
+
+Ce projet représente une grande satisfaction pour moi. Il a non seulement permis à mon entreprise d’améliorer la gestion de la restitution du matériel, mais il a aussi facilité le travail des informaticiens locaux et des RH. Ce fut une expérience enrichissante qui m’a permis d’approfondir mes compétences en développement full-stack et en gestion de projet.
+
+Si je devais refaire ce projet, je prendrais encore plus en compte les retours des utilisateurs dès les premières étapes pour optimiser l’interface et le processus. Mais aujourd’hui, je suis fier d’avoir contribué à un projet qui apporte une réelle valeur ajoutée à l’entreprise.
+    `,
+    date: '2025-05-18', // Date de publication
+    category: 'Réalisation',
+    readTime: 10, // Temps estimé de lecture en minutes
+    image: './assets/images/miniature/optimisation_restitution.png',
+    skills: ['Node.js', 'TypeScript', 'React', 'Gestion de projet', 'Automatisation', 'Ergonomie d\'une application'],
+  },
 ];
 
 export const projectsData: Project[] = [
