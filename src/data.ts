@@ -1,6 +1,7 @@
 import { TimelineItem, Skill, SocialLink, BlogPost, Project } from './types';
 import profil from './assets/images/profil.jpg';
 import spaceMonopoly from './assets/images/miniature/space_monopoly.png';
+import optimisationRestitution from './assets/images/miniature/blog/optimisation_restitution.jpg';
 
 
 export const timelineData: TimelineItem[] = [
@@ -228,7 +229,7 @@ Si je devais refaire ce projet, je prendrais encore plus en compte les retours d
     date: '2025-05-18', // Date de publication
     category: 'Réalisation',
     readTime: 10, // Temps estimé de lecture en minutes
-    image: './assets/images/miniature/optimisation_restitution.png',
+    image: optimisationRestitution,
     skills: ['Node.js', 'TypeScript', 'React', 'Gestion de projet', 'Automatisation', 'Ergonomie d\'une application'],
   },
 ];
