@@ -1,0 +1,25 @@
+.scrollToTopButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.scrollToTopButton.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scrollToTopButton:hover {
+  background-color: var(--color-secondary-dark);
+}

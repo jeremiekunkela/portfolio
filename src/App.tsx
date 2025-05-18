@@ -11,6 +11,7 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
+import ScrollToTopButton from './components/ScrollToTopButton/ScrollToTopButton';
 
 import './index.css';
 
@@ -40,6 +41,8 @@ function App() {
               </div>
               <Footer />
             </main>
+            {/* Ajout du bouton ScrollToTop */}
+            <ScrollToTopButton />
           </div>
         </ThemeProvider>
       </LanguageProvider>
