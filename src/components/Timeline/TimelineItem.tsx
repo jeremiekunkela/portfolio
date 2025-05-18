@@ -36,6 +36,13 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           </p>
         )}
         <p className={styles.description}>{item.description}</p>
+        <span className={styles.skills}>
+          {item.skills && item.skills.map((skill, index) => (
+            <span key={index} className={styles.skill}>
+              {skill}
+            </span>
+          ))}
+        </span>
       </div>
     </div>
   );

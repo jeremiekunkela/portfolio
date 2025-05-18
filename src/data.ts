@@ -1,5 +1,6 @@
 import { TimelineItem, Skill, SocialLink, BlogPost, Project } from './types';
 import profil from './assets/images/profil.jpg';
+import spaceMonopoly from './assets/images/miniature/space_monopoly.png';
 
 
 export const timelineData: TimelineItem[] = [
@@ -7,55 +8,75 @@ export const timelineData: TimelineItem[] = [
     id: 1,
     title: 'Expert en ingénierie du logiciel',
     organization: 'ESIEA',
-    period: '2023 - Present',
-    description: 'Spécialisation en Python, Architecture logicielle, Méthodologie Agile, JavaScript, Vision par ordinateur, Flutter, Framework Ionic',
+    period: '2023 - Présent',
+    description: 'Titre d\'expert en ingénierie du logiciel',
     type: 'education',
     location: 'Ivry-sur-Seine, Île-de-France',
+    skills: ['Python', 'Architecture logicielle', 'Méthodologie Agile', 'JavaScript', 'Vision par ordinateur', 'Flutter', 'Ionic', 'Programmation fonctionnelle']
   },
   {
     id: 2,
     title: 'Développeur Full Stack',
     organization: 'Urssaf Ile-de-France',
-    period: 'Nov 2023 - Present',
-    description: 'Développement d\'applications web avec React.js et Node.js en alternance',
+    period: 'Nov 2023 - Présent',
+    description: 'Développement autonome d\'une application de réservation de salles, création d\'un script automatisé pour améliorer le processus de restitution de matériel, et développement d\'une application pour suivre et gérer ce processus.',
     type: 'experience',
     location: 'Montreuil, Île-de-France',
+    skills: ['React.js', 'Node.js', 'TypeScript', 'Redux RTK Query', 'MUI', 'MySQL', 'Sequelize', 'Docker', 'Nodemailer', 'Handlebars', 'MongoDB', 'JavaFX', 'PHP', 'Microservices', 'APIs REST']
   },
   {
     id: 3,
     title: 'Développeur Full Stack',
     organization: 'KMB Labs',
-    period: 'Mar 2023 - Aug 2023',
-    description: 'Élaboration de produits (chatbots, moteurs de recherche, backoffice et autres services webs)',
+    period: 'Mar 2023 - Août 2023',
+    description: 'Développement de chatbots clients, mise en place de parcours WhatsApp, création de lambdas pour usage spécifique, et amélioration du backoffice.',
     type: 'experience',
-    location: 'Paris, Île-de-France'
+    location: 'Paris, Île-de-France',
+    skills: ['Node.js', 'Chatbots', 'API 360 Dialogs', 'AWS Lambda', 'JavaScript', 'Serverless Framework', 'React', 'Système de design', 'Développement piloté par les tests', 'Programmation orientée objet (POO)']
   },
   {
     id: 4,
     title: 'Ingénieur de support technique',
     organization: 'AB Tasty',
-    period: 'Jul 2022',
-    description: 'Développement d\'extension chrome venant compléter le produit Ab tasty',
+    period: 'Juil 2022 - Août 2022',
+    description: 'Conception et développement d\'une extension Chrome permettant la visualisation et la consultation des tests en cours directement depuis l\'extension, avec injection de script sur les pages web des tests.',
     type: 'experience',
-    location: 'Paris, Île-de-France'
+    location: 'Paris, Île-de-France',
+    skills: ['React.js', 'Node.js', 'JavaScript', 'HTML', 'CSS', 'API Chrome', 'API AB Tasty', 'Intégration et livraison continues (CI/CD)']
   },
   {
     id: 5,
     title: 'Bachelor en informatique',
     organization: 'INTECH',
     period: '2020 - 2023',
-    description: 'Formation en développement logiciel avec mention très bien. Spécialisation en Java, Spring Boot, Vue.js, et pratiques DevOps',
+    description: 'Bachelor en informatique',
     type: 'education',
     location: 'Ivry-sur-Seine, Île-de-France',
+    skills: [
+      'Java', 
+      'Spring Boot', 
+      'Vue.js', 
+      'DevOps', 
+      'WAMP', 
+      'JavaFX', 
+      'PHP', 
+      'Microservices', 
+      'APIs REST', 
+      'Développement piloté par les tests', 
+      'Programmation orientée objet (POO)', 
+      'Intégration et livraison continues (CI/CD)', 
+      'Node.js'
+    ]
   },
   {
     id: 6,
     title: 'Baccalauréat Scientifique',
     organization: 'Lycée Camille See',
     period: '2017 - 2020',
-    description: 'Spécialité Mathématiques',
+    description: 'Attribution du baccalauréat scientifique',
     type: 'education',
     location: 'Paris, Île-de-France',
+    skills: ['Spécialité Mathématiques', 'Matières Scientifiques']
   }
 ];
 export const skillsData: Skill[] = [
@@ -169,6 +190,15 @@ export const blogPosts: BlogPost[] = [
 ];
 
 export const projectsData: Project[] = [
+   {
+    id: 1,
+    title: 'Space monopoly',
+    description: 'Un jeu de société bureau sur le thème de l\'espace, inspiré du Monopoly en 3D.',
+    technologies: ['Java', 'JavaFX', 'Blender'],
+    image: spaceMonopoly,
+    demoUrl: 'https://www.youtube.com/watch?v=sZujKdlejeA&ab_channel=Jeremie',
+    category: 'Student',
+  },
   // {
   //   id: 1,
   //   title: 'E-commerce Platform',

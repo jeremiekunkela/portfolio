@@ -100,6 +100,21 @@
   font-size: 0.9375rem;
   line-height: 1.6;
   color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill {
+  background-color: var(--color-secondary-transparent);
+  color: var(--color-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.875rem;
 }
 
 @media (max-width: 768px) {

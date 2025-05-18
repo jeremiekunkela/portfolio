@@ -10,6 +10,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, isVisible, delay }) => {
+  console.log(project);
   return (
     <article 
       className={`${styles.card} ${isVisible ? styles.visible : ''}`}

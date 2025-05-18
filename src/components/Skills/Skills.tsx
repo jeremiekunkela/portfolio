@@ -28,7 +28,7 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className={styles.skills} ref={sectionRef}>
       <div className={styles.container}>
-        <h2 className={styles.heading}>Mes Compétences</h2>
+        <h2 className={styles.heading}>Mes Compétences principales</h2>
         <p className={styles.subheading}>
           Voici un aperçu de mes compétences. Je suis toujours en train d'apprendre et d'évoluer,
         </p>
