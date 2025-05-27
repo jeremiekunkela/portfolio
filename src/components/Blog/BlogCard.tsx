@@ -2,7 +2,7 @@ import React from 'react';
 import { useIntl } from 'react-intl';
 import { ArrowRight, Clock } from 'lucide-react';
 import { format } from 'date-fns';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './BlogCard.module.css';
 import { BlogPost } from '../../types';
 
@@ -14,6 +14,13 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ post, isVisible, delay }) => {
   const intl = useIntl();
+  const navigate = useNavigate();
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo(0, 0);
+    navigate(`/blog/${post.slug}`);
+  };
 
   return (
     <article 
@@ -46,10 +53,10 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, isVisible, delay }) => {
         <h3 className={styles.title}>{post.title}</h3>
         <p className={styles.excerpt}>{post.excerpt}</p>
         
-        <Link to={`/blog/${post.slug}`} className={styles.readMore}>
+        <a href={`/blog/${post.slug}`} className={styles.readMore} onClick={handleClick}>
           {intl.formatMessage({ id: 'blog.readMore' })}
           <ArrowRight size={16} />
-        </Link>
+        </a>
       </div>
     </article>
   );
