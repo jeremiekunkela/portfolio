@@ -32,7 +32,9 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     }
     
     const currentHour = dayjs().tz('Europe/Paris').hour();
+    console.log('currentHour', currentHour)
     const isDayTime = currentHour >= 6 && currentHour < 18;
+    console.log('isDayTime', isDayTime)
     return isDayTime ? 'light' : 'dark';
   });
 
