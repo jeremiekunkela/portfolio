@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styles from './Header.module.css';
 import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
 import { useScrollToSection } from '../../hooks/useScrollToSection';
@@ -7,6 +8,8 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [, setMobileMenuOpen] = useState(false);
   const scrollToSection = useScrollToSection();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,15 +29,26 @@ const Header: React.FC = () => {
     { name: 'Contact', sectionId: 'contact' }
   ];
 
-  const handleNavClick = (sectionId: string) => {
-    scrollToSection(sectionId);
+  const handleNavClick = async (sectionId: string) => {
+    if (location.pathname !== '/') {
+      await navigate('/');
+      // Wait for the navigation to complete
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
+    } else {
+      scrollToSection(sectionId);
+    }
     setMobileMenuOpen(false);
   };
 
   return (
     <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ''}`}>
       <div className={styles.container}>
-        <a href="#" className={styles.logo} onClick={() => handleNavClick('home')}>
+        <a href="#" className={styles.logo} onClick={(e) => {
+          e.preventDefault();
+          handleNavClick('home');
+        }}>
           JK
         </a>
 

@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useIntl } from 'react-intl';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Home, User, Code2, BookOpen, Mail, Menu, X, AppWindow } from 'lucide-react';
 import styles from './Sidebar.module.css';
 import { LanguageContext } from '../../context/LanguageContext';
@@ -10,6 +11,8 @@ const Sidebar: React.FC = () => {
   const { language, setLanguage } = useContext(LanguageContext);
   const scrollToSection = useScrollToSection();
   const intl = useIntl();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
     { id: 'home', icon: Home, label: intl.formatMessage({ id: 'nav.home' }) },
@@ -20,8 +23,16 @@ const Sidebar: React.FC = () => {
     { id: 'contact', icon: Mail, label: intl.formatMessage({ id: 'nav.contact' }) },
   ];
 
-  const handleNavClick = (sectionId: string) => {
-    scrollToSection(sectionId);
+  const handleNavClick = async (sectionId: string) => {
+    if (location.pathname !== '/') {
+      await navigate('/');
+      // Wait for the navigation to complete
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
+    } else {
+      scrollToSection(sectionId);
+    }
     setIsOpen(false);
   };
 
@@ -36,7 +47,6 @@ const Sidebar: React.FC = () => {
       </button>
 
       <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
-
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             {navItems.map((item) => {
