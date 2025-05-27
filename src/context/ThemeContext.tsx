@@ -18,8 +18,14 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return (savedTheme as Theme) || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const savedTheme = localStorage.getItem('theme') as Theme;
+    if (savedTheme) {
+      return savedTheme;
+    }
+    
+    const currentHour = new Date().getHours();
+    const isDayTime = currentHour >= 6 && currentHour < 18;
+    return isDayTime ? 'light' : 'dark';
   });
 
   useEffect(() => {
