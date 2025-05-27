@@ -1,4 +1,12 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
+// Configure dayjs with plugins
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.tz.setDefault('Europe/Paris');
 
 type Theme = 'light' | 'dark';
 
@@ -23,7 +31,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
       return savedTheme;
     }
     
-    const currentHour = new Date().getHours();
+    const currentHour = dayjs().tz('Europe/Paris').hour();
     const isDayTime = currentHour >= 6 && currentHour < 18;
     return isDayTime ? 'light' : 'dark';
   });
