@@ -48,6 +48,11 @@
   transition: all 0.2s ease;
 }
 
+.native {
+  background-color: var(--color-primary);
+  color: var(--bg-primary);
+}
+
 .levelChip.beginner {
   background-color: var(--color-success-light);
   color: var(--color-success);

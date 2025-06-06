@@ -41,7 +41,6 @@ function App() {
               </div>
               <Footer />
             </main>
-            {/* Ajout du bouton ScrollToTop */}
             <ScrollToTopButton />
           </div>
         </ThemeProvider>

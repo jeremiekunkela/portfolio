@@ -12,7 +12,7 @@ export interface TimelineItem {
 export interface Skill {
   id: number;
   name: string;
-  level?: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
+  level?: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert' | 'Native'
   icon: string;
   category: 'technical' | 'soft' | 'language' | 'tools';
 }

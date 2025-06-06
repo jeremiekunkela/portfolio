@@ -1,49 +1,51 @@
 import { TimelineItem, Skill, SocialLink, BlogPost, Project } from './types';
 import profil from './assets/images/profil.jpg';
-import spaceMonopoly from './assets/images/miniature/space_monopoly.png';
-import optimisationRestitution from './assets/images/miniature/blog/optimisation_restitution.jpg';
+import spaceMonopoly from './assets/images/miniatures/projects/space_monopoly.png';
+import phoneMarket from './assets/images/miniatures/projects/phone_market.png';
+import fastlink from './assets/images/miniatures/projects/fastlink.png';
+import optimisationRestitution from './assets/images/miniatures/blogs/optimisation_restitution.jpg';
 
 
 export const timelineData: TimelineItem[] = [
   {
     id: 1,
     title: 'Expert en ingénierie du logiciel',
-    organization: 'ESIEA',
+    organization: "ESIEA",
     period: '2023 - Présent',
     description: 'Titre d\'expert en ingénierie du logiciel',
     type: 'education',
-    location: 'Ivry-sur-Seine, Île-de-France',
-    skills: ['Python', 'Architecture logicielle', 'Méthodologie Agile', 'JavaScript', 'Vision par ordinateur', 'Flutter', 'Ionic', 'Programmation fonctionnelle']
+    location: 'Ivry-sur-Seine',
+    skills: ['Python', 'Architecture logicielle', 'Agile', 'JavaScript', 'Vision par ordinateur', 'Flutter', 'Ionic', 'Programmation fonctionnelle']
   },
   {
     id: 2,
     title: 'Développeur Full Stack',
     organization: 'Urssaf Ile-de-France',
     period: 'Nov 2023 - Présent',
-    description: 'Développement autonome d\'une application de réservation de salles, création d\'un script automatisé pour améliorer le processus de restitution de matériel, et développement d\'une application pour suivre et gérer ce processus.',
+    description: 'Développement d\'applications de réservation de salle et de suivi de restitution de matériel pour les employés en départ.',
     type: 'experience',
-    location: 'Montreuil, Île-de-France',
-    skills: ['React.js', 'Node.js', 'TypeScript', 'Redux RTK Query', 'MUI', 'MySQL', 'Sequelize', 'Docker', 'Nodemailer', 'Handlebars', 'MongoDB', 'JavaFX', 'PHP', 'Microservices', 'APIs REST']
+    location: 'Montreuil',
+    skills: ['React.js', 'Node.js', 'TypeScript', 'Redux', 'MUI', 'MySQL', 'Sequelize', 'Docker', 'Nodemailer', 'Handlebars', 'MongoDB', 'JavaFX', 'PHP', 'Microservices', 'APIs REST']
   },
   {
     id: 3,
     title: 'Développeur Full Stack',
     organization: 'KMB Labs',
     period: 'Mar 2023 - Août 2023',
-    description: 'Développement de chatbots clients, mise en place de parcours WhatsApp, création de lambdas pour usage spécifique, et amélioration du backoffice.',
+    description: 'Développement de parcours WhatsApp, chatbots client et lambdas d\'envoi de notification, amélioration du backoffice.',
     type: 'experience',
-    location: 'Paris, Île-de-France',
-    skills: ['Node.js', 'Chatbots', 'API 360 Dialogs', 'AWS Lambda', 'JavaScript', 'Serverless Framework', 'React', 'Système de design', 'Développement piloté par les tests', 'Programmation orientée objet (POO)']
+    location: 'Paris',
+    skills: ['Node.js', 'Chatbots', 'API 360 Dialogs', 'AWS Lambda', 'JavaScript', 'Serverless', 'React', 'Design system', 'TDD', 'POO']
   },
   {
     id: 4,
     title: 'Ingénieur de support technique',
     organization: 'AB Tasty',
     period: 'Juil 2022 - Août 2022',
-    description: 'Conception et développement d\'une extension Chrome permettant la visualisation et la consultation des tests en cours directement depuis l\'extension, avec injection de script sur les pages web des tests.',
+    description: 'Développement d\'une extension Chrome pour visualiser les tests.',
     type: 'experience',
-    location: 'Paris, Île-de-France',
-    skills: ['React.js', 'Node.js', 'JavaScript', 'HTML', 'CSS', 'API Chrome', 'API AB Tasty', 'Intégration et livraison continues (CI/CD)']
+    location: 'Paris',
+    skills: ['React.js', 'Node.js', 'JavaScript', 'HTML', 'CSS', 'API Chrome', 'API AB Tasty', 'CI/CD']
   },
   {
     id: 5,
@@ -52,21 +54,9 @@ export const timelineData: TimelineItem[] = [
     period: '2020 - 2023',
     description: 'Bachelor en informatique',
     type: 'education',
-    location: 'Ivry-sur-Seine, Île-de-France',
+    location: 'Ivry-sur-Seine',
     skills: [
-      'Java', 
-      'Spring Boot', 
-      'Vue.js', 
-      'DevOps', 
-      'WAMP', 
-      'JavaFX', 
-      'PHP', 
-      'Microservices', 
-      'APIs REST', 
-      'Développement piloté par les tests', 
-      'Programmation orientée objet (POO)', 
-      'Intégration et livraison continues (CI/CD)', 
-      'Node.js'
+      'Java', 'Spring Boot', 'Vue.js', 'DevOps', 'WAMP', 'JavaFX', 'PHP', 'Microservices', 'APIs REST', 'TDD', 'POO', 'CI/CD', 'Node.js'
     ]
   },
   {
@@ -74,10 +64,10 @@ export const timelineData: TimelineItem[] = [
     title: 'Baccalauréat Scientifique',
     organization: 'Lycée Camille See',
     period: '2017 - 2020',
-    description: 'Attribution du baccalauréat scientifique',
+    description: 'Baccalauréat scientifique',
     type: 'education',
-    location: 'Paris, Île-de-France',
-    skills: ['Spécialité Mathématiques', 'Matières Scientifiques']
+    location: 'Paris',
+    skills: ['Mathématiques', 'Sciences']
   }
 ];
 export const skillsData: Skill[] = [
@@ -98,7 +88,7 @@ export const skillsData: Skill[] = [
   { id: 15, name: 'Travail d\'équipe', icon: 'Team', category: 'soft' },
   { id: 16, name: 'Autonomie', icon: 'User', category: 'soft' },
   { id: 17, name: 'Anglais', level: 'Intermediate', icon: 'Globe', category: 'language' },
-  { id: 18, name: 'Français', level: 'Advanced', icon: 'Globe', category: 'language' },
+  { id: 18, name: 'Français', level: 'Native', icon: 'Globe', category: 'language' },
   { id: 19, name: 'Visual Studio Code', level: 'Intermediate', icon: 'Code2', category: 'tools' },
   { id: 20, name: 'Postman', level: 'Intermediate', icon: 'Server', category: 'tools' },
   { id: 21, name: 'Figma', level: 'Beginner', icon: 'Layout', category: 'tools' },
@@ -235,7 +225,7 @@ Si je devais refaire ce projet, je prendrais encore plus en compte les retours d
 ];
 
 export const projectsData: Project[] = [
-   {
+  {
     id: 1,
     title: 'Space monopoly',
     description: 'Un jeu de société bureau sur le thème de l\'espace, inspiré du Monopoly en 3D.',
@@ -244,34 +234,22 @@ export const projectsData: Project[] = [
     demoUrl: 'https://www.youtube.com/watch?v=sZujKdlejeA&ab_channel=Jeremie',
     category: 'Student',
   },
-  // {
-  //   id: 1,
-  //   title: 'E-commerce Platform',
-  //   description: 'A full-featured e-commerce platform built with React and Node.js, featuring user authentication, product management, and payment integration.',
-  //   technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-  //   image: 'https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  //   demoUrl: 'https://ecommerce-demo.example.com',
-  //   githubUrl: 'https://github.com/username/ecommerce',
-  //   category: 'Personal'
-  // },
-  // {
-  //   id: 2,
-  //   title: 'Task Management App',
-  //   description: 'A collaborative task management application with real-time updates, team features, and progress tracking.',
-  //   technologies: ['Vue.js', 'Firebase', 'Tailwind CSS'],
-  //   image: 'https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  //   demoUrl: 'https://taskmanager-demo.example.com',
-  //   githubUrl: 'https://github.com/username/taskmanager',
-  //   videoUrl: 'https://youtube.com/watch?v=demo',
-  //   category: 'Student'
-  // },
-  // {
-  //   id: 3,
-  //   title: 'Weather Dashboard',
-  //   description: 'A weather dashboard that displays current weather conditions and forecasts for multiple locations.',
-  //   technologies: ['React', 'OpenWeather API', 'Chart.js'],
-  //   image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-  //   githubUrl: 'https://github.com/username/weather-dashboard',
-  //   category: 'Personal'
-  // }
+  {
+    id: 2,
+    title: 'Phone market',
+    description: 'Une application de gestion de marché de téléphones, permettant aux utilisateurs d\'acheter et de vendre des téléphones.',
+    technologies: ['PHP', 'SQL', 'HTML', 'CSS', 'WAMP'],
+    image: phoneMarket,
+    demoUrl: 'https://www.youtube.com/watch?v=mZ2vzl0wdWY&ab_channel=Jeremie',
+    category: 'Student',
+  },
+  {
+    id: 3,
+    title: 'Fastlink',
+    description: 'Un outil de gestion de liens, permettant aux utilisateurs de raccourcir et de partager des liens facilement.',
+    technologies: ['Vue.js', 'Spring Boot', 'Architecture Microservices'],
+    image: fastlink,
+    demoUrl: 'https://www.youtube.com/watch?v=J2OWjOt3pQ4',
+    category: 'Student',
+  },
 ];

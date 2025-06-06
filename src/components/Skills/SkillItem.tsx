@@ -20,6 +20,8 @@ const SkillItem: React.FC<SkillItemProps> = ({ skill, isVisible, delay }) => {
         return styles.intermediate;
       case 'advanced':
         return styles.advanced;
+      case 'native':
+        return styles.native;
       default:
         return styles.intermediate;
     }
