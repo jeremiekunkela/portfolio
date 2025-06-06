@@ -1,32 +1,36 @@
-import React, { useState, useContext } from 'react';
-import { useIntl } from 'react-intl';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Home, User, Code2, BookOpen, Mail, Menu, X, AppWindow } from 'lucide-react';
 import styles from './Sidebar.module.css';
-import { LanguageContext } from '../../context/LanguageContext';
 import { useScrollToSection } from '../../hooks/useScrollToSection';
+
+const navLabels: Record<string, string> = {
+  home: 'Accueil',
+  about: 'À propos',
+  skills: 'Compétences',
+  projects: 'Projets',
+  blog: 'Blog',
+  contact: 'Contact',
+};
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { language, setLanguage } = useContext(LanguageContext);
   const scrollToSection = useScrollToSection();
-  const intl = useIntl();
   const location = useLocation();
   const navigate = useNavigate();
 
   const navItems = [
-    { id: 'home', icon: Home, label: intl.formatMessage({ id: 'nav.home' }) },
-    { id: 'about', icon: User, label: intl.formatMessage({ id: 'nav.about' }) },
-    { id: 'skills', icon: Code2, label: intl.formatMessage({ id: 'nav.skills' }) },
-    { id: 'projects', icon: AppWindow, label: intl.formatMessage({ id: 'nav.projects' }) },
-    { id: 'blog', icon: BookOpen, label: intl.formatMessage({ id: 'nav.blog' }) },
-    { id: 'contact', icon: Mail, label: intl.formatMessage({ id: 'nav.contact' }) },
+    { id: 'home', icon: Home },
+    { id: 'about', icon: User },
+    { id: 'skills', icon: Code2 },
+    { id: 'projects', icon: AppWindow },
+    { id: 'blog', icon: BookOpen },
+    { id: 'contact', icon: Mail },
   ];
 
   const handleNavClick = async (sectionId: string) => {
     if (location.pathname !== '/') {
       await navigate('/');
-      // Wait for the navigation to complete
       setTimeout(() => {
         scrollToSection(sectionId);
       }, 100);
@@ -62,28 +66,13 @@ const Sidebar: React.FC = () => {
                     }}
                   >
                     <Icon size={20} className={styles.navIcon} />
-                    {item.label}
+                    {navLabels[item.id]}
                   </a>
                 </li>
               );
             })}
           </ul>
         </nav>
-
-        <div className={styles.languageSwitch}>
-          <button
-            className={`${styles.languageButton} ${language === 'en' ? styles.active : ''}`}
-            onClick={() => setLanguage('en')}
-          >
-            EN
-          </button>
-          <button
-            className={`${styles.languageButton} ${language === 'fr' ? styles.active : ''}`}
-            onClick={() => setLanguage('fr')}
-          >
-            FR
-          </button>
-        </div>
       </aside>
     </>
   );

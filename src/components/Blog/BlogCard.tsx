@@ -11,7 +11,6 @@ interface BlogCardProps {
   isVisible: boolean;
   delay: number;
 }
-
 const BlogCard: React.FC<BlogCardProps> = ({ post, isVisible, delay }) => {
   return (
     <article 

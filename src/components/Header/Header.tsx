@@ -51,7 +51,9 @@ const Header: React.FC = () => {
         }}>
           JK
         </a>
-
+        <div className={styles.themeSwitch}>
+          <ThemeSwitch />
+        </div>
         <nav className={styles.nav}>
           {navItems.map((item) => (
             <a

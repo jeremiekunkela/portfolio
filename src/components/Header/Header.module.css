@@ -33,6 +33,10 @@
   color: var(--color-accent);
 }
 
+.themeSwitch {
+  margin-right: 2.5rem;
+}
+
 .nav {
   display: flex;
   gap: 2rem;
