@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import styles from './Header.module.css';
-import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
-import { useScrollToSection } from '../../hooks/useScrollToSection';
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import styles from "./Header.module.css";
+import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
+import { useScrollToSection } from "../../hooks/useScrollToSection";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,22 +16,22 @@ const Header: React.FC = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { name: 'Accueil', sectionId: 'home' },
-    { name: 'Chronologie', sectionId: 'timeline' },
-    { name: 'Compétences', sectionId: 'skills' },
-    { name: 'Projets', sectionId: 'projects' },
-    { name: 'Blog', sectionId: 'blog' },
-    { name: 'Contact', sectionId: 'contact' }
+    { name: "Accueil", sectionId: "home" },
+    { name: "Chronologie", sectionId: "timeline" },
+    { name: "Compétences", sectionId: "skills" },
+    { name: "Projets", sectionId: "projects" },
+    { name: "Blog", sectionId: "blog" },
+    { name: "Contact", sectionId: "contact" },
   ];
 
   const handleNavClick = async (sectionId: string) => {
-    if (location.pathname !== '/') {
-      await navigate('/');
+    if (location.pathname !== "/") {
+      await navigate("/");
       // Wait for the navigation to complete
       setTimeout(() => {
         scrollToSection(sectionId);
@@ -43,12 +43,18 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ''}`}>
+    <header
+      className={`${styles.header} ${isScrolled ? styles.headerScrolled : ""}`}
+    >
       <div className={styles.container}>
-        <a href="#" className={styles.logo} onClick={(e) => {
-          e.preventDefault();
-          handleNavClick('home');
-        }}>
+        <a
+          href="#"
+          className={styles.logo}
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavClick("home");
+          }}
+        >
           JK
         </a>
         <div className={styles.themeSwitch}>
@@ -68,7 +74,6 @@ const Header: React.FC = () => {
               {item.name}
             </a>
           ))}
-          <ThemeSwitch />
         </nav>
       </div>
     </header>
