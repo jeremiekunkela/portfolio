@@ -1,10 +1,10 @@
 import React from 'react';
-import { useIntl } from 'react-intl';
 import { ArrowRight, Clock } from 'lucide-react';
-import { format } from 'date-fns';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './BlogCard.module.css';
 import { BlogPost } from '../../types';
+import dayjs from 'dayjs';
+import 'dayjs/locale/fr';
 
 interface BlogCardProps {
   post: BlogPost;
@@ -13,15 +13,6 @@ interface BlogCardProps {
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ post, isVisible, delay }) => {
-  const intl = useIntl();
-  const navigate = useNavigate();
-
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.scrollTo(0, 0);
-    navigate(`/blog/${post.slug}`);
-  };
-
   return (
     <article 
       className={`${styles.card} ${isVisible ? styles.visible : ''}`}
@@ -39,24 +30,20 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, isVisible, delay }) => {
         <div className={styles.meta}>
           <span className={styles.category}>{post.category}</span>
           <span className={styles.date}>
-            {format(new Date(post.date), 'MMM d, yyyy')}
+            {dayjs(post.date).locale('fr').format('D MMMM YYYY')}
           </span>
           <span className={styles.readTime}>
             <Clock size={14} />
-            {intl.formatMessage(
-              { id: 'blog.minuteRead' },
-              { minutes: post.readTime }
-            )}
+            {post.readTime} min de lecture
           </span>
         </div>
-        
         <h3 className={styles.title}>{post.title}</h3>
         <p className={styles.excerpt}>{post.excerpt}</p>
         
-        <a href={`/blog/${post.slug}`} className={styles.readMore} onClick={handleClick}>
-          {intl.formatMessage({ id: 'blog.readMore' })}
+        <Link to={`/blog/${post.slug}`} className={styles.readMore}>
+          Lire l&apos;article
           <ArrowRight size={16} />
-        </a>
+        </Link>
       </div>
     </article>
   );

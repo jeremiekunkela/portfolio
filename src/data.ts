@@ -112,113 +112,33 @@ export const personalInfo = {
 };
 
 export const blogPosts: BlogPost[] = [
-  // {
-  //   id: 1,
-  //   title: 'Les bonnes pratiques du développement React',
-  //   slug: 'react-best-practices',
-  //   excerpt: 'Découvrez les meilleures pratiques pour développer des applications React performantes et maintenables.',
-  //   content: 'Contenu détaillé sur les bonnes pratiques React...',
-  //   date: '2024-03-15',
-  //   category: 'Compétence technique',
-  //   readTime: 8,
-  //   image: 'https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  // },
-  // {
-  //   id: 2,
-  //   title: 'Mon expérience en alternance',
-  //   slug: 'alternance-experience',
-  //   excerpt: 'Retour d\'expérience sur mon alternance en tant que développeur full stack.',
-  //   content: 'Détails de mon expérience en alternance...',
-  //   date: '2024-03-10',
-  //   category: 'Réalisation',
-  //   readTime: 6,
-  //   image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  // },
-  // {
-  //   id: 3,
-  //   title: 'L\'importance du DevOps',
-  //   slug: 'devops-importance',
-  //   excerpt: 'Pourquoi le DevOps est devenu incontournable dans le développement moderne.',
-  //   content: 'Exploration des principes DevOps...',
-  //   date: '2024-03-05',
-  //   category: 'Compétence transverse',
-  //   readTime: 5,
-  //   image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  // },
-  // {
-  //   id: 4,
-  //   title: 'Développement d\'une application de gestion de tâches',
-  //   slug: 'task-management-app',
-  //   excerpt: 'Comment j\'ai conçu et développé une application de gestion de tâches avec React et Node.js.',
-  //   content: 'Dans ce projet, j\'ai développé une application complète de gestion de tâches utilisant React pour le frontend et Node.js pour le backend. L\'application permet aux utilisateurs de créer, organiser et suivre leurs tâches quotidiennes avec des fonctionnalités comme le drag-and-drop, les rappels et le partage d\'équipe.',
-  //   date: '2024-03-01',
-  //   category: 'Réalisation',
-  //   readTime: 7,
-  //   image: 'https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  // },
-  // {
-  //   id: 5,
-  //   title: 'Création d\'un chatbot intelligent pour le service client',
-  //   slug: 'chatbot-service-client',
-  //   excerpt: 'Retour d\'expérience sur le développement d\'un chatbot utilisant l\'IA pour améliorer le service client.',
-  //   content: 'J\'ai dirigé le développement d\'un chatbot intelligent pour améliorer notre service client. En utilisant des technologies d\'IA et de NLP, nous avons créé un assistant virtuel capable de répondre aux questions fréquentes et de gérer les demandes simples des clients 24/7.',
-  //   date: '2024-02-25',
-  //   category: 'Réalisation',
-  //   readTime: 8,
-  //   image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  // },
-  // {
-  //   id: 6,
-  //   title: 'Refonte complète d\'une plateforme e-commerce',
-  //   slug: 'ecommerce-platform-redesign',
-  //   excerpt: 'Comment j\'ai modernisé une plateforme e-commerce vieillissante en utilisant des technologies modernes.',
-  //   content: 'Ce projet de refonte a impliqué la modernisation complète d\'une plateforme e-commerce existante. Nous avons migré d\'une architecture monolithique vers une architecture microservices, amélioré les performances et ajouté de nouvelles fonctionnalités comme le paiement en un clic et les recommandations personnalisées.',
-  //   date: '2024-02-20',
-  //   category: 'Réalisation',
-  //   readTime: 10,
-  //   image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  // },
   {
-    id: 7, // Assurez-vous que l'ID est unique
-    title: 'Optimisation du suivi et de la restitution du matériel des employés en départ',
+    id: 7,
+    title: 'Optimisation du suivi de restitution du matériel',
     slug: 'optimisation-restitution-materiel',
-    excerpt: 'Un projet pour garantir la restitution des équipements des employés en départ et améliorer le suivi pour les informaticiens locaux et les RH.',
-    content: `
-Dans mon entreprise, la restitution du matériel des employés en départ n’était pas correctement suivie. Cela engendrait des pertes et compliquait le travail des informaticiens locaux (IL) et des ressources humaines (RH). Après une réunion pour définir les besoins, l’idée initiale était de mettre en place un script automatisé permettant d’identifier les employés sur le départ à J-X jours, de leur envoyer une première notification pour les inviter à prendre rendez-vous avec un informaticien via un outil interne, puis de programmer plusieurs relances si aucune action n’était prise.
-
-Si, après le départ de l’employé, aucun matériel n’était restitué, une nouvelle étape de suivi était déclenchée, informant les RH pour qu’ils puissent engager des actions si nécessaire.
-
-### Un script pour automatiser le suivi
-
-J’ai choisi de développer ce script en Node.js et TypeScript. Le choix de TypeScript était motivé par la nécessité d’avoir un typage strict pour garantir la fiabilité des données, essentielles au bon fonctionnement du processus. Node.js s’est imposé naturellement pour sa performance et sa capacité à traiter efficacement les échanges avec les outils internes de l’entreprise.
-
-Au fil du développement, j’ai identifié un besoin supplémentaire : l’absence de visibilité pour les informaticiens et les RH sur l’état des restitutions. J’ai donc proposé et développé une interface web en React et Node.js pour suivre l’ensemble du processus en temps réel.
-
-### Une interface pour piloter la restitution
-
-L’interface que j’ai conçue permet de voir qui a pris rendez-vous, qui a restitué ou non son matériel et qui doit partir dans les prochains jours. Elle offre également la possibilité d’ajouter des commentaires pour suivre les restitutions et de déclarer manuellement des rendez-vous, bien que la plupart soient récupérés automatiquement depuis l’outil interne.
-
-Grâce à cette interface, les IL et les RH ont une vision claire et centralisée du processus. J’ai également ajouté une fonctionnalité permettant d’interrompre le suivi pour des cas spécifiques, par exemple lorsqu’un employé conserve du matériel pour une mission future.
-
-### Un impact concret et des résultats mesurables
-
-Depuis la mise en place de ce processus, 90 restitutions ont été gérées avec succès, et seul un employé n’a pas restitué son matériel depuis octobre 2024. Ce projet a considérablement amélioré le travail des IL en leur fournissant des outils efficaces pour suivre les restitutions et en réduisant le nombre d’employés partant sans rendre leur équipement.
-
-### Des évolutions pour l’avenir
-
-À court terme, des améliorations sont déjà prévues. L’objectif est d’étendre l’outil pour inclure d’autres types de matériel, comme les chaises ergonomiques, afin de couvrir des besoins plus larges. Une ouverture aux RH est aussi envisagée, avec un module leur permettant de saisir les étapes du processus et d’indiquer si la restitution a bien eu lieu.
-
-Le script évoluera également pour prendre en compte davantage de types de contrats, certains n’étant pas encore gérés pour des raisons administratives. Enfin, une page de statistiques sera ajoutée pour suivre l’évolution du taux de restitution et identifier d’éventuels axes d’amélioration.
-
-### Un projet dont je suis fier
-
-Ce projet représente une grande satisfaction pour moi. Il a non seulement permis à mon entreprise d’améliorer la gestion de la restitution du matériel, mais il a aussi facilité le travail des informaticiens locaux et des RH. Ce fut une expérience enrichissante qui m’a permis d’approfondir mes compétences en développement full-stack et en gestion de projet.
-
-Si je devais refaire ce projet, je prendrais encore plus en compte les retours des utilisateurs dès les premières étapes pour optimiser l’interface et le processus. Mais aujourd’hui, je suis fier d’avoir contribué à un projet qui apporte une réelle valeur ajoutée à l’entreprise.
-    `,
-    date: '2025-05-18', // Date de publication
+    excerpt: 'Dans toute entreprise, la gestion et la restitution du matériel informatique lors du départ d’un collaborateur sont des enjeux majeurs pour la sécurité, la maîtrise des coûts et l’optimisation des processus internes. Ce projet vise à fiabiliser et automatiser ce suivi, tout en offrant une meilleure visibilité aux équipes informatiques et RH.',
+    content: [
+      "Dans de nombreuses entreprises, la restitution du matériel informatique lors du départ d’un employé est un processus critique, souvent source de pertes matérielles, de complexité administrative et de risques de sécurité. Une gestion rigoureuse de ces restitutions contribue directement à l’optimisation de la gestion interne, à la réduction des coûts et à la sécurisation du parc informatique.",
+      "Dans mon entreprise, ce processus n’était pas suffisamment suivi, ce qui compliquait le travail des informaticiens locaux (IL) et des ressources humaines (RH). Après une analyse des besoins, nous avons décidé de mettre en place un script automatisé permettant d’identifier les employés sur le départ à J-X jours, de leur envoyer une première notification pour les inviter à prendre rendez-vous avec un informaticien via un outil interne, puis de programmer plusieurs relances si aucune action n’était prise.",
+      "Si, après le départ de l’employé, aucun matériel n’était restitué, une nouvelle étape de suivi était déclenchée, informant les RH pour qu’ils puissent engager des actions si nécessaire.",
+      "### Automatiser pour fiabiliser le suivi",
+      "J’ai choisi de développer ce script en Node.js et TypeScript, afin de garantir la robustesse et la fiabilité du traitement des données. Node.js s’est imposé pour sa performance et sa capacité à s’intégrer facilement avec les outils internes de l’entreprise.",
+      "Rapidement, il est apparu qu’une simple automatisation ne suffisait pas : les équipes avaient besoin d’une visibilité en temps réel sur l’état des restitutions. J’ai donc proposé et développé une interface web en React et Node.js, permettant de piloter l’ensemble du processus.",
+      "### Une interface pour centraliser l’information",
+      "L’interface permet de visualiser qui a pris rendez-vous, qui a restitué ou non son matériel, et qui doit partir dans les prochains jours. Elle offre également la possibilité d’ajouter des commentaires pour suivre les restitutions et de déclarer manuellement des rendez-vous, bien que la plupart soient récupérés automatiquement depuis l’outil interne.",
+      "Grâce à cette interface, les IL et les RH disposent d’une vision claire et centralisée du processus. J’ai également ajouté une fonctionnalité permettant d’interrompre le suivi pour des cas spécifiques, par exemple lorsqu’un employé conserve du matériel pour une mission future.",
+      "### Un impact concret sur la gestion interne",
+      "Depuis la mise en place de ce processus, 90 restitutions ont été gérées avec succès, et seul un employé n’a pas restitué son matériel depuis octobre 2024. Ce projet a permis d’optimiser la gestion interne, de sécuriser le parc informatique et de faciliter le travail des équipes concernées.",
+      "### Des perspectives d’évolution",
+      "À court terme, des améliorations sont déjà prévues : extension à d’autres types de matériel (par exemple, les chaises ergonomiques), ouverture d’un module RH pour saisir les étapes du processus, et ajout d’une page de statistiques pour suivre l’évolution du taux de restitution.",
+      "Le script évoluera également pour prendre en compte davantage de types de contrats, certains n’étant pas encore gérés pour des raisons administratives.",
+      "### Un projet à forte valeur ajoutée",
+      "Ce projet illustre l’importance d’optimiser les processus internes dans une entreprise, en s’appuyant sur l’automatisation et la centralisation de l’information. Il m’a permis de renforcer mes compétences en développement full-stack et en gestion de projet, tout en apportant une réelle valeur ajoutée à l’organisation.",
+      "Si c’était à refaire, j’impliquerais encore plus les utilisateurs finaux dès les premières étapes pour optimiser l’interface et le processus. Aujourd’hui, je suis fier d’avoir contribué à une meilleure gestion interne et à la sécurisation du matériel de l’entreprise."
+    ].join('\n'),
+    date: '2025-05-18', 
     category: 'Réalisation',
-    readTime: 10, // Temps estimé de lecture en minutes
+    readTime: 10,
     image: optimisationRestitution,
     skills: ['Node.js', 'TypeScript', 'React', 'Gestion de projet', 'Automatisation', 'Ergonomie d\'une application'],
   },

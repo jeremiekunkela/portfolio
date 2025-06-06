@@ -24,6 +24,12 @@
   object-fit: cover;
 }
 
+.readTime {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--text-secondary);
+}
 .content {
   padding: 1.5rem;
 }

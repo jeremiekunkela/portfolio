@@ -66,6 +66,13 @@
   color: var(--text-secondary);
 }
 
+.readTime {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--text-secondary);
+}
+
 /* Style pour les titres h1, h2, h3, etc. */
 .content h1 {
   font-size: 2rem;

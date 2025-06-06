@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { format } from 'date-fns';
 import { ArrowLeft, Clock } from 'lucide-react';
-import ReactMarkdown from 'react-markdown'; // Import de react-markdown
+import ReactMarkdown from 'react-markdown'; 
 import styles from './BlogPost.module.css';
 import { blogPosts } from '../../data';
+import dayjs from 'dayjs';
+import 'dayjs/locale/fr';
 
 const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find(post => post.slug === slug);
+
+useEffect(() => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}, []);
 
   if (!post) {
     return (
@@ -45,10 +50,10 @@ const BlogPost: React.FC = () => {
           
           <div className={styles.meta}>
             <span className={styles.category}>{post.category}</span>
-            <time>{format(new Date(post.date), 'MMM d, yyyy')}</time>
+            <time>{dayjs(post.date).locale('fr').format('D MMMM YYYY')}</time>
             <span className={styles.readTime}>
               <Clock size={14} />
-              {post.readTime} min read
+              {post.readTime} min de lecture
             </span>
           </div>
         </header>
