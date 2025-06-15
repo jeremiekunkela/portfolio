@@ -27,6 +27,10 @@
   color: var(--text-primary);
 }
 
+.required {
+  color: var(--color-error);
+}
+
 .input,
 .textarea {
   width: 100%;
@@ -36,13 +40,24 @@
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   font-size: 1rem;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .input:focus,
 .textarea:focus {
   outline: none;
   border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px var(--color-secondary-transparent);
+}
+
+.input.error,
+.textarea.error {
+  border-color: var(--color-error);
+}
+
+.input.error:focus,
+.textarea.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
 
 .textarea {
@@ -60,9 +75,14 @@
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
 }
 
-.button:hover {
+.button:hover:not(:disabled) {
   background-color: var(--color-accent-dark);
   transform: translateY(-2px);
 }
@@ -71,12 +91,16 @@
   background-color: var(--color-accent-light);
   cursor: not-allowed;
   transform: none;
+  opacity: 0.6;
 }
 
 .error {
   color: var(--color-error);
   font-size: 0.875rem;
   margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .successMessage {
@@ -86,6 +110,63 @@
   border-radius: 4px;
   margin-bottom: 1rem;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.errorMessage {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--color-error);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rateLimitMessage {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--color-warning);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.characterCount {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: right;
+  margin-top: 0.25rem;
+}
+
+.characterCount.warning {
+  color: var(--color-warning);
+}
+
+.characterCount.error {
+  color: var(--color-error);
+}
+
+.loadingSpinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 768px) {

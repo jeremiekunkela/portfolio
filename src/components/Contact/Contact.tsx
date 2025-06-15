@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className={styles.contact} ref={sectionRef}>
       <div className={styles.container}>
-        <h2 className={styles.heading}> Contactez moi</h2>
+        <h2 className={styles.heading}>Contactez-moi</h2>
         <p className={styles.subheading}>
           N'hésitez pas à me contacter si vous recherchez un développeur, avez une question, ou souhaitez simplement échanger.
         </p>
@@ -28,7 +28,10 @@ const Contact: React.FC = () => {
             
             <div className={styles.location}>
               <p>
-                <strong>Location:</strong> {personalInfo.location}
+                <strong>Localisation :</strong> {personalInfo.location}
+              </p>
+              <p>
+                <strong>Email :</strong> jeremiekunkela@gmail.com
               </p>
             </div>
             
