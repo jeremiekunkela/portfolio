@@ -9,7 +9,7 @@ import { BlogPost } from '../../types';
 type BlogCategory = BlogPost['category'] | 'all';
 
 const Blog: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<BlogCategory>('all');
+  const [activeCategory, setActiveCategory] = useState<BlogCategory>('technical');
   const [sectionRef, isVisible] = useIntersectionObserver<HTMLElement>({
     threshold: 0.1,
   });
@@ -17,9 +17,9 @@ const Blog: React.FC = () => {
 
   const categories: { id: BlogCategory; label: string }[] = [
     { id: 'all', label: 'Tous les articles' },
-    { id: 'Réalisation', label: 'Réalisations' },
-    { id: 'Compétence technique', label: 'Compétences techniques' },
-    { id: 'Compétence transverse', label: 'Compétences transverses' }
+    { id: 'project', label: 'Réalisations' },
+    { id: 'technical', label: 'Compétences techniques' },
+    { id: 'transversal', label: 'Compétences transverses' }
   ];
 
   const filteredPosts = activeCategory === 'all'

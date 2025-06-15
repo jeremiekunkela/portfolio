@@ -10,7 +10,7 @@ export const messages = {
     'timeline.title': 'My Journey',
     'skills.title': 'My Skills',
     'skills.subtitle': 'Here are some of the skills I\'ve acquired throughout my journey as a developer.',
-    'blog.title': 'Latest Articles',
+    'blog.title': 'Derniers articles',
     'blog.readMore': 'Read More',
     'blog.minuteRead': '{minutes} min read',
     'contact.title': 'Get In Touch',

@@ -31,7 +31,7 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   date: string;
-  category: 'Réalisation' | 'Compétence technique' | 'Compétence transverse';
+  category: 'project' | 'technical' | 'transversal';
   readTime: number;
   image?: string;
   skills?: string[];
@@ -46,7 +46,7 @@ export interface Project {
   demoUrl?: string;
   githubUrl?: string;
   videoUrl?: string;
-  category: 'Personal' | 'Student';
+  category: 'Personal' | 'Student'
 }
 
 export type Language = 'en' | 'fr';

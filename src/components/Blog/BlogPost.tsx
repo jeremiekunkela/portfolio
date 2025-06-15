@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Clock } from 'lucide-react';
-import ReactMarkdown from 'react-markdown'; 
-import styles from './BlogPost.module.css';
-import { blogPosts } from '../../data';
-import dayjs from 'dayjs';
-import 'dayjs/locale/fr';
+import React, { useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { ArrowLeft, Clock } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import styles from "./BlogPost.module.css";
+import { blogPosts } from "../../data";
+import dayjs from "dayjs";
+import "dayjs/locale/fr";
 
 const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = blogPosts.find(post => post.slug === slug);
+  const post = blogPosts.find((post) => post.slug === slug);
 
-useEffect(() => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}, []);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   if (!post) {
     return (
@@ -21,7 +21,7 @@ useEffect(() => {
         <div className={styles.container}>
           <Link to="/" className={styles.backLink}>
             <ArrowLeft size={20} />
-            Back to Home
+            Retour à l'accueil
           </Link>
           <h1 className={styles.title}>Article not found</h1>
         </div>
@@ -34,23 +34,19 @@ useEffect(() => {
       <div className={styles.container}>
         <Link to="/" className={styles.backLink}>
           <ArrowLeft size={20} />
-          Back to Home
+          Retour à l'accueil
         </Link>
 
         <header className={styles.header}>
           {post.image && (
-            <img 
-              src={post.image} 
-              alt={post.title} 
-              className={styles.image}
-            />
+            <img src={post.image} alt={post.title} className={styles.image} />
           )}
-          
+
           <h1 className={styles.title}>{post.title}</h1>
-          
+
           <div className={styles.meta}>
             <span className={styles.category}>{post.category}</span>
-            <time>{dayjs(post.date).locale('fr').format('D MMMM YYYY')}</time>
+            <time>{dayjs(post.date).locale("fr").format("D MMMM YYYY")}</time>
             <span className={styles.readTime}>
               <Clock size={14} />
               {post.readTime} min de lecture

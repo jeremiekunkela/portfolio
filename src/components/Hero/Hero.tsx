@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
               scrollToSection('contact');
             }}
           >
-            Get in touch
+            Entrer en contact
           </a>
         </div>
         <div className={styles.imageContainer}>
