@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Hero from './components/Hero/Hero';
+import About from './components/About/About';
 import Timeline from './components/Timeline/Timeline';
 import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
@@ -29,6 +30,7 @@ function App() {
                   <Route path="/" element={
                     <>
                       <Hero />
+                      <About />
                       <Timeline />
                       <Skills />
                       <Projects />

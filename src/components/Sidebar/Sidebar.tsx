@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Home, User, Code2, BookOpen, Mail, Menu, X, AppWindow } from 'lucide-react';
+import { Home, User, Code2, BookOpen, Mail, Menu, X, AppWindow, Clock } from 'lucide-react';
 import styles from './Sidebar.module.css';
 import { useScrollToSection } from '../../hooks/useScrollToSection';
 
 const navLabels: Record<string, string> = {
   home: 'Accueil',
   about: 'À propos',
+  timeline: 'Chronologie',
   skills: 'Compétences',
   projects: 'Projets',
   blog: 'Blog',
@@ -22,6 +23,7 @@ const Sidebar: React.FC = () => {
   const navItems = [
     { id: 'home', icon: Home },
     { id: 'about', icon: User },
+    { id: 'timeline', icon: Clock },
     { id: 'skills', icon: Code2 },
     { id: 'projects', icon: AppWindow },
     { id: 'blog', icon: BookOpen },

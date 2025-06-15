@@ -9,6 +9,7 @@ const Footer: React.FC = () => {
   
   const navItems = [
     { name: 'Accueil', sectionId: 'home' },
+    { name: 'À propos', sectionId: 'about' },
     { name: 'Projets', sectionId: 'projects' },
     { name: 'Blog', sectionId: 'blog' },
     { name: 'Compétences', sectionId: 'skills' },
