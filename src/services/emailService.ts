@@ -1,9 +1,9 @@
 import emailjs from '@emailjs/browser';
 
-// Configuration EmailJS
-const EMAILJS_SERVICE_ID = 'service_portfolio';
-const EMAILJS_TEMPLATE_ID = 'template_contact';
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // À remplacer par votre clé publique EmailJS
+// Configuration EmailJS - Loaded from environment variables
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export interface EmailData {
   from_name: string;
@@ -13,6 +13,12 @@ export interface EmailData {
 }
 
 export const sendEmail = async (emailData: EmailData): Promise<boolean> => {
+  // Check if EmailJS is properly configured
+  if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+    console.error('EmailJS configuration is incomplete. Please check your environment variables.');
+    return false;
+  }
+
   try {
     const result = await emailjs.send(
       EMAILJS_SERVICE_ID,
