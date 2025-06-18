@@ -1,39 +1,43 @@
-import emailjs from '@emailjs/browser';
-
-// Configuration EmailJS - Loaded from environment variables
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+// Configuration pour l'envoi d'emails via Supabase Edge Function
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 export interface EmailData {
   from_name: string;
   from_email: string;
   message: string;
-  to_email: string;
 }
 
 export const sendEmail = async (emailData: EmailData): Promise<boolean> => {
-  // Check if EmailJS is properly configured
-  if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-    console.error('EmailJS configuration is incomplete. Please check your environment variables.');
+  // Vérifier la configuration Supabase
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    console.error('Configuration Supabase manquante. Vérifiez vos variables d\'environnement.');
     return false;
   }
 
   try {
-    const result = await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID,
-      {
+    const response = await fetch(`${SUPABASE_URL}/functions/v1/send-email`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+      },
+      body: JSON.stringify({
         from_name: emailData.from_name,
         from_email: emailData.from_email,
         message: emailData.message,
-        to_email: 'jeremiekunkela@gmail.com',
-        reply_to: emailData.from_email,
-      },
-      EMAILJS_PUBLIC_KEY
-    );
+      }),
+    });
 
-    return result.status === 200;
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Erreur lors de l\'envoi de l\'email:', errorData);
+      return false;
+    }
+
+    const result = await response.json();
+    return result.success === true;
+
   } catch (error) {
     console.error('Erreur lors de l\'envoi de l\'email:', error);
     return false;
