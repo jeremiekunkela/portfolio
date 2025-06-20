@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Clock } from "lucide-react";
 import ReactMarkdown from "react-markdown";
@@ -11,9 +11,20 @@ const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find((post) => post.slug === slug);
 
+  // Ajoutez un state pour le contenu markdown
+  const [markdownContent, setMarkdownContent] = useState<string>("");
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+
+    if (post?.content && post.content.endsWith(".md")) {
+      fetch(post.content)
+        .then((res) => res.text())
+        .then(setMarkdownContent);
+    } else {
+      setMarkdownContent("");
+    }
+  }, [slug]);
 
   if (!post) {
     return (
@@ -55,8 +66,11 @@ const BlogPost: React.FC = () => {
         </header>
 
         <div className={styles.content}>
-          {/* Utilisation de ReactMarkdown pour rendre le contenu Markdown */}
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+          {markdownContent ? (
+            <ReactMarkdown>{markdownContent}</ReactMarkdown>
+          ) : (
+            <ReactMarkdown>{post?.content || ""}</ReactMarkdown>
+          )}
         </div>
 
         {/* Affichage des compétences à la fin */}

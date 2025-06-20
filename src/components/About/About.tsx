@@ -13,37 +13,37 @@ const About: React.FC = () => {
       id: 1,
       icon: BookOpen,
       title: "Méthodologie rigoureuse",
-      content: "Mon parcours scolaire, marqué par des défis, m'a enseigné l'importance d'une méthodologie de travail rigoureuse - une compétence essentielle que j'applique aujourd'hui dans le développement web. Cette expérience a forgé mon esprit critique et ma capacité à résoudre des problèmes complexes."
+      content: "Mon parcours scolaire m'a appris l'importance d'une méthodologie de travail rigoureuse, essentielle pour résoudre des problèmes complexes en développement web."
     },
     {
       id: 2,
       icon: Zap,
-      title: "Des valeurs sportives au service du code",
-      content: "Sprinteur pratiquant l'athlétisme à bon niveau, j'ai développé discipline et résilience à travers des entraînements rigoureux. Ces qualités se traduisent naturellement dans ma pratique du développement : persévérance face aux bugs, discipline dans l'écriture de code propre, et capacité à maintenir un rythme soutenu sur les projets."
+      title: "Valeurs sportives",
+      content: "La pratique de l'athlétisme m'apporte discipline et persévérance, des qualités que j'applique au quotidien dans le développement."
     },
     {
       id: 3,
       icon: Users,
       title: "Esprit d'équipe",
-      content: "Mon engagement bénévole comme animateur sportif a renforcé mes compétences en travail d'équipe et ma capacité à expliquer des concepts complexes - des atouts précieux pour collaborer efficacement en équipe de développement."
+      content: "Mon engagement bénévole comme animateur sportif a renforcé mes compétences en travail d'équipe et en communication."
     },
     {
       id: 4,
       icon: Target,
       title: "Curiosité technologique",
-      content: "Passionné par l'innovation numérique, je maintiens une veille active sur les dernières tendances en développement web, intelligence artificielle et nouvelles technologies. Cette curiosité naturelle me permet de rester à la pointe des évolutions du secteur."
+      content: "Je m'intéresse activement aux nouveautés du web et des technologies pour rester à jour et progresser."
     },
     {
       id: 5,
       icon: Globe,
-      title: "Ouverture internationale",
-      content: "Mes voyages à travers l'Europe et le Canada (Croatie, Italie, Allemagne, Angleterre, Portugal, Canada...) ont développé mon adaptabilité et ma capacité à travailler dans des environnements multiculturels - un atout dans le monde globalisé du développement web."
+      title: "Ouverture d'esprit",
+      content: "Voyager dans plusieurs pays m'a permis de découvrir différentes cultures et d'élargir ma vision du monde."
     },
     {
       id: 6,
       icon: Music,
       title: "Créativité et autonomie",
-      content: "Ma pratique du piano, initiée en conservatoire puis poursuivie en autodidacte, témoigne de ma capacité d'apprentissage autonome et de ma créativité - des qualités essentielles pour innover et se former continuellement aux nouvelles technologies."
+      content: "La pratique du piano, en conservatoire puis en autodidacte, illustre ma créativité et ma capacité à apprendre par moi-même."
     }
   ];
 
