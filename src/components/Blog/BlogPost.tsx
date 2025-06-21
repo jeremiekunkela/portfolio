@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Clock } from "lucide-react";
 import ReactMarkdown from "react-markdown";
@@ -9,7 +9,7 @@ import { blogPosts } from "../../data";
 import dayjs from "dayjs";
 import "dayjs/locale/fr";
 import { useScrollToSection } from "../../hooks/useScrollToSection";
-
+import ReadingProgressBar from "./ReadingProgressBar";
 
 const CATEGORY_LABELS: Record<string, string> = {
   project: 'Réalisations',
@@ -22,6 +22,7 @@ const BlogPost: React.FC = () => {
   const post = blogPosts.find((post) => post.slug === slug);
   const navigate = useNavigate();
   const scrollToSection = useScrollToSection();
+  const contentRef = useRef<HTMLDivElement>(null);
 
   // Ajoutez un state pour le contenu markdown
   const [markdownContent, setMarkdownContent] = useState<string>("");
@@ -65,78 +66,83 @@ const BlogPost: React.FC = () => {
   }
 
   return (
-    <article className={styles.article}>
-      <div className={styles.container}>
-        <Link to="/" className={styles.backLink} onClick={handleBackToBlog}>
-          <ArrowLeft size={20} />
-          Retour à l'accueil
-        </Link>
+    <>
+      {/* Barre de progression de lecture */}
+      <ReadingProgressBar contentRef={contentRef} showPercentage={true} />
+      
+      <article className={styles.article}>
+        <div className={styles.container}>
+          <Link to="/" className={styles.backLink} onClick={handleBackToBlog}>
+            <ArrowLeft size={20} />
+            Retour à l'accueil
+          </Link>
 
-        <header className={styles.header}>
-          {post.image && (
-            <img src={post.image} alt={post.title} className={styles.image} />
-          )}
+          <header className={styles.header}>
+            {post.image && (
+              <img src={post.image} alt={post.title} className={styles.image} />
+            )}
 
-          <h1 className={styles.title}>{post.title}</h1>
+            <h1 className={styles.title}>{post.title}</h1>
 
-          <div className={styles.meta}>
-            <span className={styles.category}>{CATEGORY_LABELS[post.category] || post.category}</span>
-            <time>{dayjs(post.date).locale("fr").format("D MMMM YYYY")}</time>
-            <span className={styles.readTime}>
-              <Clock size={14} />
-              {post.readTime} min de lecture
-            </span>
-          </div>
-        </header>
-
-        <div className={styles.content}>
-          <ReactMarkdown
-            components={{
-              code({
-                inline,
-                className,
-                children,
-                ...props
-              }: React.HTMLAttributes<HTMLElement> & {
-                inline?: boolean;
-                children?: React.ReactNode;
-              }) {
-                const match = /language-(\w+)/.exec(className || "");
-                return !inline && match ? (
-                  <SyntaxHighlighter
-                    style={oneDark as unknown}
-                    language={match[1]}
-                    {...props}
-                  >
-                    {String(children).replace(/\n$/, "")}
-                  </SyntaxHighlighter>
-                ) : (
-                  <code className={className} {...props}>
-                    {children}
-                  </code>
-                );
-              },
-            }}
-          >
-            {markdownContent ? markdownContent : post?.content || ""}
-          </ReactMarkdown>
-        </div>
-
-        {/* Affichage des compétences à la fin */}
-        {post.skills && post.skills.length > 0 && (
-          <section className={styles.skillsSection}>
-            <h2 className={styles.skillsTitle}>Compétences utilisées</h2>
-            <div className={styles.skills}>
-              {post.skills.map((skill, index) => (
-                <span key={index} className={styles.skillChip}>
-                  {skill}
-                </span>
-              ))}
+            <div className={styles.meta}>
+              <span className={styles.category}>{CATEGORY_LABELS[post.category] || post.category}</span>
+              <time>{dayjs(post.date).locale("fr").format("D MMMM YYYY")}</time>
+              <span className={styles.readTime}>
+                <Clock size={14} />
+                {post.readTime} min de lecture
+              </span>
             </div>
-          </section>
-        )}
-      </div>
-    </article>
+          </header>
+
+          <div className={styles.content} ref={contentRef}>
+            <ReactMarkdown
+              components={{
+                code({
+                  inline,
+                  className,
+                  children,
+                  ...props
+                }: React.HTMLAttributes<HTMLElement> & {
+                  inline?: boolean;
+                  children?: React.ReactNode;
+                }) {
+                  const match = /language-(\w+)/.exec(className || "");
+                  return !inline && match ? (
+                    <SyntaxHighlighter
+                      style={oneDark as unknown}
+                      language={match[1]}
+                      {...props}
+                    >
+                      {String(children).replace(/\n$/, "")}
+                    </SyntaxHighlighter>
+                  ) : (
+                    <code className={className} {...props}>
+                      {children}
+                    </code>
+                  );
+                },
+              }}
+            >
+              {markdownContent ? markdownContent : post?.content || ""}
+            </ReactMarkdown>
+          </div>
+
+          {/* Affichage des compétences à la fin */}
+          {post.skills && post.skills.length > 0 && (
+            <section className={styles.skillsSection}>
+              <h2 className={styles.skillsTitle}>Compétences utilisées</h2>
+              <div className={styles.skills}>
+                {post.skills.map((skill, index) => (
+                  <span key={index} className={styles.skillChip}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
+      </article>
+    </>
   );
 };
 
