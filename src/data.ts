@@ -10,7 +10,8 @@ import espritCritique from "./assets/images/miniatures/blogs/esprit_critique.jpg
 import ergonomie from "./assets/images/miniatures/blogs/ergonomie.jpg";
 import devBackend from "./assets/images/miniatures/blogs/dev_backend.jpg";
 import devFrontend from "./assets/images/miniatures/blogs/dev_frontend.jpg";
-import coderPrepremnt from "./assets/images/miniatures/blogs/coder_proprement.png";
+import codeCleanly from "./assets/images/miniatures/blogs/coder_proprement.png";
+import functionalProgramming from "./assets/images/miniatures/blogs/programmer_fonctionnellement.jpg";
 
 export const timelineData: TimelineItem[] = [
   {
@@ -266,7 +267,7 @@ export const blogPosts: BlogPost[] = [
     title: "Optimisation du suivi de restitution du matériel",
     slug: "optimisation-restitution-materiel",
     excerpt:
-      "Dans toute entreprise, la gestion et la restitution du matériel informatique lors du départ d’un collaborateur sont des enjeux majeurs pour la sécurité, la maîtrise des coûts et l’optimisation des processus internes. Ce projet vise à fiabiliser et automatiser ce suivi, tout en offrant une meilleure visibilité aux équipes informatiques et RH.",
+      "Optimisation et automatisation du suivi de restitution du matériel informatique lors du départ d’un collaborateur, pour renforcer la sécurité, réduire les coûts et améliorer la visibilité des équipes IT et RH.",
     content: "",
     date: "2025-05-18",
     category: "project",
@@ -347,60 +348,27 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 14,
-    title: "Coder proprement : la compétence transverse qui change tout",
+    title: "Comment j'écris du code propre et maintenable",
     slug: "coder-proprement",
     excerpt:
-      "Pourquoi le code propre est la base de tous mes projets, et comment j’utilise conventions, outils et programmation fonctionnelle pour garantir qualité, collaboration et évolutivité.",
+      "Cet article présente mes retours d’expérience et conseils pratiques pour écrire un code propre et maintenable, tirés de mon parcours professionnel et étudiant, ainsi que des principes de Robert C. Martin, auteur de Clean Code.",
     content: "/blogs/techniques/coder-proprement.md",
     date: "2025-06-13",
     category: "technical",
-    readTime: 7,
-    image: coderPrepremnt,
-    skills: [
-      "Code propre",
-      "ESLint",
-      "Prettier",
-      "Programmation fonctionnelle",
-      "Collaboration",
-      "Qualité logicielle",
-      "Maintenance",
-    ],
-  },
-  {
-    id: 15,
-    title: "Ma Philosophie de Développement : L'Utilisateur au Centre",
-    slug: "ergonomie-ux-developpement-centre-utilisateur",
-    image: ergonomie,
-    category: "transversal",
-    date: "2025-06-19",
-    readTime: 7,
-    excerpt:"Dans ma pratique du développement, l'UI/UX n'est pas un luxe, mais une nécessité. Je conçois des applications centrées sur l'utilisateur, alliant performance technique et expérience utilisateur optimale.",
-    content: ""
+    readTime: 15,
+    image: codeCleanly,
   },
   {
     id: 16,
     title:
-      "Le Développement Frontend : Mes Compétences au Service de l'Interface Utilisateur",
-    slug: "developpement-frontend-interface-utilisateur",
-    excerpt:
-      "Maîtrise de HTML, CSS, JavaScript, React et Next.js pour concevoir des interfaces web modernes, performantes et centrées utilisateur.",
-    content: "",
+      "Ma philosophie de développement : Programmer Fonctionnellement",
+    slug: "programmer-fonctionnellement",
+    excerpt:"Cet article reflète mon approche pratique de la programmation fonctionnelle, forgée par l'expérience terrain chez KMB Labs et validée par des projets concrets.",
+    content: "/blogs/techniques/programmer-fonctionnellement.md",
     date: "2025-06-13",
     category: "technical",
     readTime: 10,
-    image: devFrontend,
-    skills: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Next.js",
-      "Responsive design",
-      "Accessibilité",
-      "Performance",
-      "UI/UX",
-      "Composants réutilisables",
-    ],
+    image: functionalProgramming,
   },
   {
     id: 17,

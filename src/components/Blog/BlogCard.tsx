@@ -11,6 +11,7 @@ interface BlogCardProps {
   isVisible: boolean;
   delay: number;
 }
+
 const BlogCard: React.FC<BlogCardProps> = ({ post, isVisible, delay }) => {
   return (
     <article 
@@ -27,7 +28,6 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, isVisible, delay }) => {
       
       <div className={styles.content}>
         <div className={styles.meta}>
-          <span className={styles.category}>{post.category}</span>
           <span className={styles.date}>
             {dayjs(post.date).locale('fr').format('D MMMM YYYY')}
           </span>
