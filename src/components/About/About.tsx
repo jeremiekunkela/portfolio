@@ -8,44 +8,44 @@ const About: React.FC = () => {
     threshold: 0.1,
   });
 
-  const aboutCards = [
-    {
-      id: 1,
-      icon: BookOpen,
-      title: "Méthodologie rigoureuse",
-      content: "Mon parcours scolaire m'a appris l'importance d'une méthodologie de travail rigoureuse, essentielle pour résoudre des problèmes complexes en développement web."
-    },
-    {
-      id: 2,
-      icon: Zap,
-      title: "Valeurs sportives",
-      content: "La pratique de l'athlétisme m'apporte discipline et persévérance, des qualités que j'applique au quotidien dans le développement."
-    },
-    {
-      id: 3,
-      icon: Users,
-      title: "Esprit d'équipe",
-      content: "Mon engagement bénévole comme animateur sportif a renforcé mes compétences en travail d'équipe et en communication."
-    },
-    {
-      id: 4,
-      icon: Target,
-      title: "Curiosité technologique",
-      content: "Je m'intéresse activement aux nouveautés du web et des technologies pour rester à jour et progresser."
-    },
-    {
-      id: 5,
-      icon: Globe,
-      title: "Ouverture d'esprit",
-      content: "Voyager dans plusieurs pays m'a permis de découvrir différentes cultures et d'élargir ma vision du monde."
-    },
-    {
-      id: 6,
-      icon: Music,
-      title: "Créativité et autonomie",
-      content: "La pratique du piano, en conservatoire puis en autodidacte, illustre ma créativité et ma capacité à apprendre par moi-même."
-    }
-  ];
+const aboutCards = [
+  {
+    id: 1,
+    icon: BookOpen,
+    title: "Méthodologie rigoureuse",
+    content: "Formé à l'analyse méthodique et à la résolution structurée de problèmes complexes, j'applique cette rigueur académique à chaque défi technique pour concevoir des solutions robustes et maintenables."
+  },
+  {
+    id: 2,
+    icon: Zap,
+    title: "Résilience sportive",
+    content: "L'athlétisme m'a forgé une mentalité de persévérance face aux obstacles. Cette résilience, acquise sur la piste, me permet de transformer chaque bug en opportunité d'apprentissage et chaque échec en tremplin vers la réussite."
+  },
+  {
+    id: 3,
+    icon: Users,
+    title: "Leadership collaboratif",
+    content: "Mon expérience d'animateur sportif a développé ma capacité à fédérer une équipe autour d'objectifs communs. Je cultive un environnement de travail où l'entraide et la communication bienveillante favorisent l'innovation collective."
+  },
+  {
+    id: 4,
+    icon: Target,
+    title: "Veille technologique active",
+    content: "Passionné par l'évolution rapide du web, je maintiens une curiosité constante pour les technologies émergentes. Cette veille stratégique me permet d'anticiper les tendances et d'intégrer les innovations pertinentes dans mes projets."
+  },
+  {
+    id: 5,
+    icon: Globe,
+    title: "Vision multiculturelle",
+    content: "Mes voyages à travers différents pays ont enrichi ma compréhension des enjeux globaux et des diversités culturelles. Cette ouverture internationale nourrit ma capacité à concevoir des solutions inclusives et universelles."
+  },
+  {
+    id: 6,
+    icon: Music,
+    title: "Créativité autodidacte",
+    content: "Du conservatoire à l'apprentissage autonome, le piano illustre ma capacité à maîtriser des compétences complexes par la pratique personnelle. Cette créativité disciplinée enrichit mon approche du développement et stimule mes solutions innovantes."
+  }
+];
 
   return (
     <section id="about" className={styles.about} ref={sectionRef}>

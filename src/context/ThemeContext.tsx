@@ -1,14 +1,13 @@
-import React, { createContext, useState, useEffect, ReactNode } from 'react';
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-import timezone from 'dayjs/plugin/timezone';
+import React, { createContext, useState, useEffect, ReactNode } from "react";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 
 // Configure dayjs with plugins
 dayjs.extend(utc);
 dayjs.extend(timezone);
-dayjs.tz.setDefault('Europe/Paris');
 
-type Theme = 'light' | 'dark';
+type Theme = "light" | "dark";
 
 interface ThemeContextType {
   theme: Theme;
@@ -16,7 +15,7 @@ interface ThemeContextType {
 }
 
 export const ThemeContext = createContext<ThemeContextType>({
-  theme: 'light',
+  theme: "light",
   toggleTheme: () => {},
 });
 
@@ -26,25 +25,23 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    const savedTheme = localStorage.getItem('theme') as Theme;
+    const savedTheme = localStorage.getItem("theme") as Theme;
     if (savedTheme) {
       return savedTheme;
     }
-    
-    const currentHour = dayjs().tz('Europe/Paris').hour();
-    console.log('currentHour', currentHour)
+    // Utiliser l'heure UTC puis la convertir explicitement en Europe/Paris
+    const currentHour = dayjs.utc().tz("Europe/Paris").hour();
     const isDayTime = currentHour >= 6 && currentHour < 18;
-    console.log('isDayTime', isDayTime)
-    return isDayTime ? 'light' : 'dark';
+    return isDayTime ? "light" : "dark";
   });
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
   return (

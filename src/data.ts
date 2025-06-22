@@ -175,7 +175,7 @@ export const skillsData: Skill[] = [
   {
     id: 8,
     name: "Programmation Fonctionnelle",
-    level: "Intermediate",
+    level: "Beginner",
     icon: "Function",
     category: "technical",
   },
@@ -198,7 +198,7 @@ export const skillsData: Skill[] = [
   { id: 12, name: "Optimisme", icon: "Smile", category: "soft" },
   { id: 13, name: "Rigueur", icon: "CheckCircle", category: "soft" },
   { id: 14, name: "Discipline", icon: "Clock", category: "soft" },
-  { id: 15, name: "Travail d'équipe", icon: "Team", category: "soft" },
+  { id: 15, name: "Esprit d'équipe", icon: "Team", category: "soft" },
   { id: 16, name: "Autonomie", icon: "User", category: "soft" },
   { id: 28, name: "Esprit critique", icon: "Brain", category: "soft" },
   {
@@ -243,13 +243,18 @@ export const skillsData: Skill[] = [
     icon: "Database",
     category: "technical",
   },
+  {
+    "id": 22,
+    "name": "NoSQL",
+    "level": "Beginner",
+    "icon": "Database",
+    "category": "technical"
+  }
 ];
 
 export const socialLinks: SocialLink[] = [
-  { id: 1, name: "GitHub", url: "https://github.com/", icon: "Github" },
-  { id: 2, name: "LinkedIn", url: "https://linkedin.com/", icon: "Linkedin" },
-  { id: 3, name: "Twitter", url: "https://twitter.com/", icon: "Twitter" },
-  { id: 4, name: "Email", url: "mailto:hello@example.com", icon: "Mail" },
+  { id: 2, name: "LinkedIn", url: "https://www.linkedin.com/in/jérémie-kunkela", icon: "Linkedin" },
+  { id: 4, name: "Email", url: "mailto:jeremiekunkela@gmail.com", icon: "Mail" },
 ];
 
 export const personalInfo = {
