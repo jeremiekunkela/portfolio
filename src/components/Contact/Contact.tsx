@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
             
             <div className={styles.socialLinks}>
               {socialLinks.map(link => {
-                const IconComponent = (LucideIcons as any)[link.icon] || LucideIcons.Link;
+                const IconComponent = ((LucideIcons as never)[link.icon] as React.ElementType) || LucideIcons.Link;
                 
                 return (
                   <a 
