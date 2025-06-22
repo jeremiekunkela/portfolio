@@ -56,7 +56,7 @@ const Header: React.FC = () => {
             handleNavClick("home");
           }}
         >
-          JK
+          JK Portfolio
         </a>
         <div className={styles.themeSwitch}>
           <ThemeSwitch />
